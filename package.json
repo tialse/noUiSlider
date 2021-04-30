@@ -15,7 +15,8 @@
     "format": "prettier src/nouislider.ts --write --config .prettierrc",
     "lint": "eslint src/nouislider.ts",
     "build": "npm run _build_js && npm run _build_css && npm run _banner",
-    "docs": "cd ../ && php -S localhost:80 nouislider/documentation/_run/router.php"
+    "docs": "cd ../ && php -S localhost:80 nouislider/documentation/_run/router.php",
+    "compile-js": "tsc -p tsconfig-es6.json && replace-in-file --quiet --configFile=replace-in-file-config-es6.js && bannerize dist/* --banner=banner.ejs"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.20.0",
